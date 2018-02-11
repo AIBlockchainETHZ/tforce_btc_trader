@@ -425,31 +425,11 @@ hypers['custom'] = {
         'type': 'bool',
         'guess': True
     },
-    # True = one action (-$x to +$x). False = two actions: (buy|sell|hold) and (how much?)
-    'single_action': {
-        'type': 'bool',
-        'guess': True
-    },
     # Scale the inputs and rewards
     'scale': {
         'type': 'bool',
         'guess': True
     },
-
-    # After this many time-steps of doing the same thing we will terminate the episode and give the agent a huge
-    # spanking. I didn't raise no investor, I raised a TRADER
-    'punish_repeats': {
-        'type': 'bounded',
-        'vals': [1000, BitcoinEnv.EPISODE_LEN * 1.5],  # more than ep len means don't punish
-        'guess': 1000,
-        'pre': int
-    },
-
-    # Should rewards be as-is (PNL), or "how much better than holding" (advantage)?
-    'advantage_reward': {
-        'type': 'bool',
-        'guess': False
-    }
 }
 
 hypers['lstm'] = {
