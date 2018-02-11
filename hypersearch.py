@@ -239,7 +239,7 @@ hypers['memory_model'] = {
     'update_mode.frequency': {
         'type': 'bounded',
         'vals': [1, 4],
-        'guess': 4,
+        'guess': 1,
         'pre': round
     },
 
@@ -295,7 +295,7 @@ hypers['ppo_model'] = {
     'step_optimizer.learning_rate': {
         'type': 'bounded',
         'vals': [0., 9.],
-        'guess': 4.,
+        'guess': 6.5,
         'hydrate': ten_to_the_neg
     },
     'optimization_steps': 25, #{
@@ -356,7 +356,7 @@ hypers['custom'] = {
     'net.depth_mid': {
         'type': 'bounded',
         'vals': [1, 3],
-        'guess': 3,
+        'guess': 2,
         'pre': round
     },
     # Dense layers
@@ -386,7 +386,7 @@ hypers['custom'] = {
     'net.activation': {
         'type': 'int',
         'vals': ['tanh', 'relu'],
-        'guess': 'tanh'
+        'guess': 'relu'
     },
 
     # Whether to append one extra tiny layer at the network's end for merging in the stationary data. This would give
@@ -423,7 +423,7 @@ hypers['custom'] = {
     # Instead of using absolute price diffs, use percent-change.
     'pct_change': {
         'type': 'bool',
-        'guess': True
+        'guess': False
     },
     # Scale the inputs and rewards
     'scale': {
@@ -448,7 +448,7 @@ hypers['conv2d'] = {
     'net.window': {
         'type': 'bounded',
         'vals': [1, 3],
-        'guess': 3,
+        'guess': 1,
         'pre': round,
     },
     # How many ways to divide a window? 1=no-overlap, 2=half-overlap (smaller # = more destructive). See comments
